@@ -1,4 +1,4 @@
-# SPP Portal — SMKS Jakarta Pusat 1
+# Web SPP
 
 A production-ready frontend + Supabase-backed logic layer for managing SPP (monthly
 tuition) payments across five roles: Admin, Tata Usaha/Bendahara, Orang Tua/Wali,
