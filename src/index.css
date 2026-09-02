@@ -1,0 +1,678 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root { height: 100%; }
+
+body {
+  @apply bg-slate-50 text-navy-950 font-sans antialiased transition-colors duration-200;
+}
+
+/* Global Font Enhancements - More Prominent */
+body {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+}
+.font-display {
+  font-weight: 700 !important;
+  letter-spacing: -0.02em;
+}
+.font-bold {
+  font-weight: 700 !important;
+}
+.font-semibold {
+  font-weight: 600 !important;
+}
+.font-medium {
+  font-weight: 500 !important;
+}
+.text-xs {
+  font-size: 0.8125rem;
+  letter-spacing: 0.02em;
+}
+.text-sm {
+  font-size: 0.9375rem;
+}
+.text-base {
+  font-size: 1.0625rem;
+}
+.text-lg {
+  font-size: 1.25rem;
+}
+.text-xl {
+  font-size: 1.5rem;
+}
+.text-2xl {
+  font-size: 1.875rem;
+  font-weight: 700 !important;
+}
+
+/* Force remove dark class for non-cyberpunk themes */
+html.theme-minimalist.dark,
+html.theme-neobrutalism.dark,
+html.theme-vintage.dark {
+  color-scheme: light;
+}
+html.theme-minimalist.dark header,
+html.theme-neobrutalism.dark header,
+html.theme-vintage.dark header {
+  background-color: inherit !important;
+  border-color: inherit !important;
+}
+html.theme-minimalist.dark header h1,
+html.theme-neobrutalism.dark header h1,
+html.theme-vintage.dark header h1 {
+  color: inherit !important;
+}
+
+/* ==========================================================================
+   1. THEME: MINIMALIST (Clean, Sophisticated, Slate & Navy Accent)
+   ========================================================================== */
+html.theme-minimalist body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+html.theme-minimalist .bg-white {
+  background-color: #ffffff;
+}
+html.theme-minimalist .border-slate-200,
+html.theme-minimalist .border-slate-100 {
+  border-color: #e2e8f0;
+}
+html.theme-minimalist .shadow-card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+}
+/* Minimalist text contrast fixes */
+html.theme-minimalist .text-navy-950 {
+  color: #0f172a;
+  font-weight: 600;
+}
+html.theme-minimalist .text-slate-800 {
+  color: #1e293b;
+  font-weight: 600;
+}
+html.theme-minimalist .text-slate-700 {
+  color: #334155;
+  font-weight: 500;
+}
+html.theme-minimalist .text-slate-600 {
+  color: #475569;
+  font-weight: 500;
+}
+html.theme-minimalist .text-slate-500 {
+  color: #475569;
+  font-weight: 500;
+}
+html.theme-minimalist .text-slate-400 {
+  color: #64748b;
+  font-weight: 400;
+}
+/* Minimalist: Topbar - MUST override dark mode */
+html.theme-minimalist header.sticky,
+html.theme-minimalist.dark header.sticky {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e2e8f0 !important;
+}
+html.theme-minimalist header.sticky h1,
+html.theme-minimalist.dark header.sticky h1 {
+  color: #0f172a !important;
+}
+html.theme-minimalist header.sticky p,
+html.theme-minimalist.dark header.sticky p {
+  color: #475569 !important;
+}
+html.theme-minimalist header.sticky span,
+html.theme-minimalist.dark header.sticky span {
+  color: #334155 !important;
+}
+/* Badge in topbar - always visible */
+html.theme-minimalist header span.inline-flex {
+  background-color: #e0e7ff !important;
+  color: #1e3a5f !important;
+  border: 1px solid #93c5fd !important;
+}
+
+/* ==========================================================================
+   2. THEME: NEON CYBERPUNK (Futuristic, Glows, Cyan & Neon Pink)
+   ========================================================================== */
+html.theme-cyberpunk body {
+  background-color: #070913;
+  color: #e2e8f0;
+}
+html.theme-cyberpunk .bg-white {
+  background-color: #0d1224;
+  color: #f1f5f9;
+  border-color: #1e294b !important;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.07);
+}
+html.theme-cyberpunk .bg-slate-50,
+html.theme-cyberpunk [class*="bg-slate-50/"] {
+  background-color: #090c1a;
+  color: #cbd5e1;
+}
+html.theme-cyberpunk .bg-slate-100 {
+  background-color: #141b33;
+  color: #e2e8f0;
+}
+html.theme-cyberpunk .border-slate-100,
+html.theme-cyberpunk .border-slate-200 {
+  border-color: #1e294b;
+}
+html.theme-cyberpunk .text-navy-950 {
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+  font-weight: 700;
+}
+html.theme-cyberpunk .text-slate-800,
+html.theme-cyberpunk .text-slate-700 {
+  color: #e2e8f0;
+  font-weight: 500;
+}
+html.theme-cyberpunk .text-slate-600,
+html.theme-cyberpunk .text-slate-500 {
+  color: #94a3b8;
+  font-weight: 500;
+}
+html.theme-cyberpunk .text-slate-400 {
+  color: #94a3b8;
+  font-weight: 400;
+}
+html.theme-cyberpunk .bg-navy-950 {
+  background-color: #04060c;
+  border-right-color: #00f0ff33;
+}
+html.theme-cyberpunk .bg-navy-700 {
+  background-color: #00f0ff;
+  color: #070913 !important;
+  font-weight: 800;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.5);
+}
+html.theme-cyberpunk .bg-navy-700:hover {
+  background-color: #38f8ff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.8);
+}
+html.theme-cyberpunk .input {
+  background-color: #0d1224;
+  border-color: #00f0ff66;
+  color: #00f0ff;
+  box-shadow: inset 0 0 8px rgba(0, 240, 255, 0.1);
+}
+html.theme-cyberpunk .input:focus {
+  border-color: #00f0ff;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.4);
+}
+html.theme-cyberpunk .badge-emerald {
+  background-color: #00f0ff1a !important;
+  color: #00f0ff !important;
+  border: 1px solid #00f0ff88 !important;
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+html.theme-cyberpunk .badge-rose {
+  background-color: #ff007f1a !important;
+  color: #ff007f !important;
+  border: 1px solid #ff007f88 !important;
+  box-shadow: 0 0 8px rgba(255, 0, 127, 0.3);
+}
+html.theme-cyberpunk .badge-gold {
+  background-color: #ffe6001a !important;
+  color: #ffe600 !important;
+  border: 1px solid #ffe60088 !important;
+  box-shadow: 0 0 8px rgba(255, 230, 0, 0.3);
+}
+/* Cyberpunk table-specific overrides */
+html.theme-cyberpunk thead tr {
+  background-color: #141b33 !important;
+}
+html.theme-cyberpunk thead th {
+  color: #00f0ff !important;
+  text-shadow: 0 0 6px rgba(0, 240, 255, 0.3);
+}
+html.theme-cyberpunk tbody td {
+  color: #cbd5e1;
+}
+html.theme-cyberpunk select,
+html.theme-cyberpunk option {
+  background-color: #0d1224;
+  color: #e2e8f0;
+}
+/* Cyberpunk: Topbar */
+html.theme-cyberpunk header.sticky,
+html.theme-cyberpunk.dark header.sticky {
+  background-color: rgba(13, 18, 36, 0.95) !important;
+  border-color: #1e294b !important;
+}
+html.theme-cyberpunk header.sticky h1 {
+  color: #00f0ff !important;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+html.theme-cyberpunk header.sticky p {
+  color: #94a3b8 !important;
+}
+html.theme-cyberpunk header.sticky span {
+  color: #e2e8f0 !important;
+}
+/* Cyberpunk: Badge in topbar - neon glow */
+html.theme-cyberpunk header span.inline-flex {
+  background-color: rgba(0, 240, 255, 0.15) !important;
+  color: #00f0ff !important;
+  border: 1px solid rgba(0, 240, 255, 0.5) !important;
+  box-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
+}
+
+/* ==========================================================================
+   3. THEME: NEO-BRUTALISM (Bold Black Borders, Hard Shadows, Vibrant Pop)
+   ========================================================================== */
+html.theme-neobrutalism body {
+  background-color: #fbf5e8;
+  color: #000000;
+  font-weight: 500;
+}
+html.theme-neobrutalism .bg-white {
+  background-color: #ffffff;
+  border: 2.5px solid #000000 !important;
+  box-shadow: 4px 4px 0px #000000 !important;
+  border-radius: 14px;
+}
+html.theme-neobrutalism .shadow-card {
+  box-shadow: 4px 4px 0px #000000 !important;
+}
+html.theme-neobrutalism .border-slate-100,
+html.theme-neobrutalism .border-slate-200 {
+  border-color: #000000;
+  border-width: 1.5px;
+}
+/* Neo-Brutalism: Force all text to be BLACK and readable */
+html.theme-neobrutalism .text-navy-950 {
+  color: #000000 !important;
+  font-weight: 700;
+}
+html.theme-neobrutalism .text-slate-800 {
+  color: #000000 !important;
+  font-weight: 600;
+}
+html.theme-neobrutalism .text-slate-700 {
+  color: #1a1a1a !important;
+  font-weight: 600;
+}
+html.theme-neobrutalism .text-slate-600 {
+  color: #222222 !important;
+  font-weight: 500;
+}
+html.theme-neobrutalism .text-slate-500 {
+  color: #333333 !important;
+  font-weight: 500;
+}
+html.theme-neobrutalism .text-slate-400 {
+  color: #444444 !important;
+  font-weight: 400;
+}
+/* Neo-Brutalism: Table header - vibrant yellow bg with black text */
+html.theme-neobrutalism thead tr {
+  background-color: #ffe142 !important;
+  border-bottom: 2.5px solid #000000 !important;
+}
+html.theme-neobrutalism thead th {
+  color: #000000 !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+/* Neo-Brutalism: Table body rows */
+html.theme-neobrutalism tbody td {
+  color: #000000 !important;
+  font-weight: 500;
+}
+html.theme-neobrutalism tbody tr {
+  border-bottom: 1.5px solid #000000;
+}
+html.theme-neobrutalism tbody tr:hover {
+  background-color: #fff9c4 !important;
+}
+/* Neo-Brutalism: Background overrides */
+html.theme-neobrutalism .bg-slate-50,
+html.theme-neobrutalism [class*="bg-slate-50/"] {
+  background-color: #fff8dc;
+  color: #000000;
+}
+html.theme-neobrutalism .bg-slate-100 {
+  background-color: #fef3c7;
+  color: #000000;
+}
+/* Neo-Brutalism: Sidebar */
+html.theme-neobrutalism .bg-navy-950 {
+  background-color: #000000;
+  border-right: 3px solid #000000;
+}
+/* Neo-Brutalism: Primary buttons */
+/* Neo-Brutalism: Topbar */
+html.theme-neobrutalism header.sticky {
+  background-color: #ffffff !important;
+  border-color: #000000 !important;
+  border-bottom: 2.5px solid #000000 !important;
+}
+html.theme-neobrutalism header.sticky h1,
+html.theme-neobrutalism header.sticky p,
+html.theme-neobrutalism header.sticky span {
+  color: inherit !important;
+}
+html.theme-neobrutalism header.sticky h1 {
+  color: #000000 !important;
+}
+/* Neo-Brutalism: Badge in topbar */
+html.theme-neobrutalism header span.inline-flex {
+  background-color: #ffe142 !important;
+  color: #000000 !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 2px 2px 0px #000000;
+  font-weight: 800 !important;
+}
+/* Neo-Brutalism: Welcome Header Card */
+html.theme-neobrutalism .from-navy-900 {
+  background-color: #000000 !important;
+  background-image: none !important;
+}
+html.theme-neobrutalism .bg-gold-500\/20 {
+  background-color: #ffe142 !important;
+  color: #000000 !important;
+}
+html.theme-neobrutalism .text-gold-300 {
+  color: #000000 !important;
+  font-weight: 800 !important;
+}
+html.theme-neobrutalism .text-gold-400 {
+  color: #ffe142 !important;
+}
+html.theme-neobrutalism .text-navy-200,
+html.theme-neobrutalism .text-navy-300 {
+  color: #666666 !important;
+}
+html.theme-neobrutalism header .text-navy-950 {
+  color: #000000 !important;
+}
+html.theme-neobrutalism header .text-slate-500 {
+  color: #333333 !important;
+}
+html.theme-neobrutalism header .text-slate-600 {
+  color: #222222 !important;
+}
+html.theme-neobrutalism header .bg-white\/10 {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+/* Neo-Brutalism: Primary buttons */
+html.theme-neobrutalism .bg-navy-700 {
+  background-color: #ffe142;
+  color: #000000 !important;
+  font-weight: 800;
+  border: 2px solid #000000;
+  box-shadow: 3px 3px 0px #000000;
+}
+html.theme-neobrutalism .bg-navy-700:hover {
+  background-color: #ffda1f;
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #000000;
+}
+html.theme-neobrutalism .bg-navy-700:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #000000;
+}
+/* Neo-Brutalism: Inputs */
+html.theme-neobrutalism .input {
+  border: 2px solid #000000 !important;
+  box-shadow: 2.5px 2.5px 0px #000000;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+}
+html.theme-neobrutalism .input:focus {
+  box-shadow: 4px 4px 0px #000000;
+}
+html.theme-neobrutalism .rounded-2xl {
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+}
+html.theme-neobrutalism .rounded-xl {
+  border: 1.5px solid #000000;
+}
+/* Neo-Brutalism: Badges */
+html.theme-neobrutalism .badge-emerald {
+  background-color: #86efac !important;
+  color: #166534 !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 2px 2px 0px #000000;
+  font-weight: 800 !important;
+}
+html.theme-neobrutalism .badge-rose {
+  background-color: #fca5a5 !important;
+  color: #991b1b !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 2px 2px 0px #000000;
+  font-weight: 800 !important;
+}
+html.theme-neobrutalism .badge-gold {
+  background-color: #fde047 !important;
+  color: #92400e !important;
+  border: 2px solid #000000 !important;
+  box-shadow: 2px 2px 0px #000000;
+  font-weight: 800 !important;
+}
+/* Neo-Brutalism: Stat Cards */
+html.theme-neobrutalism .text-2xl {
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+/* Neo-Brutalism: Selects and dropdowns */
+html.theme-neobrutalism select {
+  border: 2px solid #000000 !important;
+  box-shadow: 2px 2px 0px #000000;
+  background-color: #ffffff;
+  color: #000000;
+  font-weight: 600;
+}
+/* Neo-Brutalism: Links and interactive text */
+html.theme-neobrutalism .text-navy-700 {
+  color: #000000 !important;
+  font-weight: 700;
+}
+html.theme-neobrutalism .bg-navy-50 {
+  background-color: #ffe142 !important;
+  border: 1.5px solid #000000;
+}
+
+/* ==========================================================================
+   4. THEME: VINTAGE EDITORIAL (Parchment, Terracotta, Antique Mahogany)
+   ========================================================================== */
+html.theme-vintage body {
+  background-color: #f6f0e4;
+  color: #2d1f14;
+}
+html.theme-vintage .bg-white {
+  background-color: #fffdf8;
+  border-color: #dfcfb9 !important;
+  box-shadow: 0 2px 8px rgba(61, 40, 23, 0.08);
+}
+html.theme-vintage .bg-slate-50,
+html.theme-vintage [class*="bg-slate-50/"] {
+  background-color: #ede3d1;
+  color: #4a3728;
+}
+html.theme-vintage .bg-slate-100 {
+  background-color: #e5d8c3;
+  color: #2d1f14;
+}
+html.theme-vintage .border-slate-100,
+html.theme-vintage .border-slate-200 {
+  border-color: #dfcfb9;
+}
+html.theme-vintage .text-navy-950 {
+  color: #3b2314;
+  font-family: Georgia, Cambria, serif;
+  font-weight: 700;
+}
+html.theme-vintage .text-slate-800,
+html.theme-vintage .text-slate-700 {
+  color: #442e1d;
+  font-weight: 600;
+}
+html.theme-vintage .text-slate-600,
+html.theme-vintage .text-slate-500 {
+  color: #6b4f3a;
+  font-weight: 500;
+}
+html.theme-vintage .text-slate-400 {
+  color: #7a614d;
+  font-weight: 400;
+}
+/* Vintage: Table header */
+html.theme-vintage thead tr {
+  background-color: #e5d8c3 !important;
+}
+html.theme-vintage thead th {
+  color: #3b2314 !important;
+  font-weight: 700 !important;
+}
+html.theme-vintage tbody td {
+  color: #2d1f14;
+}
+/* Vintage: Topbar */
+html.theme-vintage header.sticky {
+  background-color: #f6f0e4 !important;
+  border-color: #dfcfb9 !important;
+}
+html.theme-vintage header.sticky h1 {
+  color: #2b180d !important;
+  font-family: Georgia, Cambria, serif;
+}
+html.theme-vintage header.sticky .text-slate-500 {
+  color: #6b4f3a !important;
+}
+/* Vintage: Badge in topbar */
+html.theme-vintage header span.inline-flex {
+  background-color: #faeed4 !important;
+  color: #6e4811 !important;
+  border: 1px solid #ebd39f !important;
+  font-weight: 600 !important;
+}
+/* Vintage: Welcome Header Card */
+html.theme-vintage .from-navy-900 {
+  background-color: #4a3728 !important;
+  background-image: linear-gradient(135deg, #4a3728 0%, #3b2314 100%) !important;
+  border-color: #6b4f3a !important;
+}
+html.theme-vintage .bg-gold-500\/20 {
+  background-color: #faeed4 !important;
+  color: #6e4811 !important;
+}
+html.theme-vintage .text-gold-300 {
+  color: #d9a52e !important;
+}
+html.theme-vintage .text-gold-400 {
+  color: #d9a52e !important;
+}
+html.theme-vintage .text-navy-200,
+html.theme-vintage .text-navy-300 {
+  color: #e5d8c3 !important;
+}
+html.theme-vintage header .text-navy-950 {
+  color: #2b180d !important;
+}
+html.theme-vintage header .text-slate-500 {
+  color: #6b4f3a !important;
+}
+html.theme-vintage header .text-slate-600 {
+  color: #4a3728 !important;
+}
+html.theme-vintage header .bg-white\/10 {
+  background-color: rgba(140, 67, 32, 0.15) !important;
+  border-color: rgba(140, 67, 32, 0.3) !important;
+}
+html.theme-vintage header .text-navy-300 {
+  color: #6b4f3a !important;
+}
+html.theme-vintage header .text-gold-400 {
+  color: #b8871f !important;
+}
+html.theme-vintage .bg-navy-950 {
+  background-color: #2b180d;
+  border-right-color: #472d1c;
+}
+html.theme-vintage .bg-navy-700 {
+  background-color: #8c4320;
+  color: #fff9f0 !important;
+  border: 1px solid #6b3115;
+}
+html.theme-vintage .bg-navy-700:hover {
+  background-color: #a45027;
+}
+html.theme-vintage .input {
+  background-color: #fffdf8;
+  border-color: #cbb89e;
+  color: #2b180d;
+}
+html.theme-vintage .input:focus {
+  border-color: #8c4320;
+  box-shadow: 0 0 0 2px rgba(140, 67, 32, 0.2);
+}
+html.theme-vintage .badge-emerald {
+  background-color: #e2edd8 !important;
+  color: #29531d !important;
+  border: 1px solid #b5d4a4 !important;
+}
+html.theme-vintage .badge-rose {
+  background-color: #f7deda !important;
+  color: #7a281e !important;
+  border: 1px solid #eab7ae !important;
+}
+html.theme-vintage .badge-gold {
+  background-color: #faeed4 !important;
+  color: #6e4811 !important;
+  border: 1px solid #ebd39f !important;
+}
+/* Vintage: Selects */
+html.theme-vintage select {
+  background-color: #fffdf8;
+  color: #2d1f14;
+  border-color: #cbb89e;
+}
+
+/* General Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { @apply bg-navy-200 rounded-full; }
+::-webkit-scrollbar-track { background: transparent; }
+
+.focus-ring {
+  @apply outline-none focus-visible:ring-2 focus-visible:ring-navy-500 focus-visible:ring-offset-2;
+}
+
+.input {
+  @apply w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm text-slate-800 outline-none transition focus:border-navy-400 focus:ring-2 focus:ring-navy-100;
+}
+
+/* Print Styling for Official Receipts */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .printable-receipt, .printable-receipt * {
+    visibility: visible;
+  }
+  .printable-receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
